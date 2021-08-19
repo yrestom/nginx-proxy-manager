@@ -201,7 +201,8 @@ func (m *Model) Request() error {
 		return err
 	}
 
-	err = acme.RequestCert(domains, m.Type)
+	// TODO: fill in blank params
+	err = acme.RequestCert(domains, m.Type, "", "", "", nil)
 	if err != nil {
 		m.Status = StatusFailed
 		m.ErrorMessage = err.Error()
